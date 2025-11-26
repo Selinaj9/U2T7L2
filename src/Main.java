@@ -3,34 +3,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("Slay the Dragon!");
-        System.out.println("----------------");
-        int health = (int) (Math.random() * 100) + 1;
-        System.out.println("The dragon has " + health + " health");
+        System.out.print("Enter a positive even number less than 100: ");
+        int num = myScanner.nextInt();
 
-        int attackAmount = 0;
-        int numAttacks = 0;
-        boolean dragonSlayed = false;
-
-        while (!(dragonSlayed || numAttacks == 5)) {
-            System.out.print("\nEnter an attack amount: ");
-            attackAmount = myScanner.nextInt();
-            numAttacks += 1;
-            health -= attackAmount;
-            if (health <= 0) {
-                System.out.println("You slayed the dragon!");
-                dragonSlayed = true;
-            } else {
-                System.out.println("Attack again! The dragon has " + health + " health");
-            }
+        while (!(num > 0 && num % 2 == 0 && num < 100)) {
+            System.out.println("No! I said a positive even number less than 100!");
+            System.out.print("Try again: ");
+            num = myScanner.nextInt();
         }
 
-        if (!dragonSlayed) {
-            System.out.println("You lost!");
-        } else {
-            System.out.println("You won!");
-        }
-        System.out.println("Game over, goodbye!");
+        System.out.println("See, that wasn't so hard!");
         myScanner.close();
     }
 }
