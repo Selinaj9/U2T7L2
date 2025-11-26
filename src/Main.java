@@ -1,18 +1,22 @@
+import java.util.Scanner;
+
+
 public class Main {
     public static void main(String[] args) {
-        int snakeEye1 = 1;
-        int snakeEye2 = 1;
-        int roll1 = (int) (Math.random() * 6) + 1;
-        int roll2 = (int) (Math.random() * 6) + 1;
-        int rollNum = 1;
-        while (snakeEye1 != roll1 || snakeEye2 != roll2) {
-            System.out.println("Roll #" + rollNum + ": " + roll1 + " and " + roll2);
-            System.out.println("Not snake eyes, rolling again!");
-            rollNum ++;
-            roll1 = (int) (Math.random() * 6) + 1;
-            roll2 = (int) (Math.random() * 6) + 1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("What number do you want to halve to one? ");
+        int userNumber = scanner.nextInt();
+        int num = userNumber;
+        int timesHalf = 0;
+        if (userNumber == 0) {
+            System.out.println("It takes 0 halvings to get from 0 to 1");
+        } else {
+            while (num != 1) {
+                num /= 2;
+                System.out.println(num);
+                timesHalf++;
+            }
+            System.out.println("It takes " + timesHalf + " halvings to get from " + userNumber + " to 1.");
         }
-        System.out.println("Roll #" + rollNum + ": " + roll1 + " and " + roll2);
-        System.out.println("Finally, snake eyes!");
     }
 }
