@@ -1,18 +1,22 @@
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) {
-        Scanner myScanner = new Scanner(System.in);
-        System.out.print("Enter a positive even number less than 100: ");
-        int num = myScanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer greater than 5: ");
+        int userNumber = scanner.nextInt();
 
-        while (!(num > 0 && num % 2 == 0 && num < 100)) {
-            System.out.println("No! I said a positive even number less than 100!");
+
+        while (!(userNumber > 5)) {
             System.out.print("Try again: ");
-            num = myScanner.nextInt();
+            userNumber = scanner.nextInt();
         }
-
-        System.out.println("See, that wasn't so hard!");
-        myScanner.close();
+        int num = 0;
+        while (num < userNumber) {
+            System.out.println(num);
+            num ++;
+        }
+        System.out.println("and finally " + userNumber);
     }
 }
