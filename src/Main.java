@@ -1,22 +1,18 @@
-import java.util.Scanner;
-
-
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter an integer greater than 5: ");
-        int userNumber = scanner.nextInt();
-
-
-        while (!(userNumber > 5)) {
-            System.out.print("Try again: ");
-            userNumber = scanner.nextInt();
+        int snakeEye1 = 1;
+        int snakeEye2 = 1;
+        int roll1 = (int) (Math.random() * 6) + 1;
+        int roll2 = (int) (Math.random() * 6) + 1;
+        int rollNum = 1;
+        while (snakeEye1 != roll1 || snakeEye2 != roll2) {
+            System.out.println("Roll #" + rollNum + ": " + roll1 + " and " + roll2);
+            System.out.println("Not snake eyes, rolling again!");
+            rollNum ++;
+            roll1 = (int) (Math.random() * 6) + 1;
+            roll2 = (int) (Math.random() * 6) + 1;
         }
-        int num = 0;
-        while (num < userNumber) {
-            System.out.println(num);
-            num ++;
-        }
-        System.out.println("and finally " + userNumber);
+        System.out.println("Roll #" + rollNum + ": " + roll1 + " and " + roll2);
+        System.out.println("Finally, snake eyes!");
     }
 }
